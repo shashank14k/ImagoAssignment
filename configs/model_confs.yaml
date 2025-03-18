@@ -1,0 +1,7 @@
+RegressionNN:
+  config: "configs/conf.yaml"
+  checkpoint: "logs/1/best_model.pth"
+
+TransformerRegressionNN:
+  config: "configs/conf2.yaml"
+  checkpoint: "logs/2/best_model.pth"

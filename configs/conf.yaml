@@ -1,0 +1,27 @@
+log_dir: logs/1
+ignore_col_names:
+  - hsi_id
+  - vomitoxin_ppb
+target_col_name: vomitoxin_ppb
+preprocess_params:
+  fill_na: median
+  null_thresh: 0.05
+  iqr_factor: 1.5
+  iqr_limits:
+    - 0.2
+    - 0.8
+  fill_outlier: clip
+  target_outlier: true
+  n_components: 0.2
+
+model_params:
+  name: RegressionNN
+  params:
+    n_neurons:
+      - 32
+      - 16
+train_params:
+  lr: 1e-3
+  epochs: 100
+  n_splits: 5
+  batch_size: 100
